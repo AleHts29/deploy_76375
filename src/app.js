@@ -34,6 +34,12 @@ app.use('/apidocs', swaggerUIExpress.serve, swaggerUIExpress.setup(specs));
 app.use(express.json());
 app.use(cookieParser());
 
+// Ruta principal de la API
+app.get('/', (req, res) => {
+    res.send('Bienvenido a la API de Adoptme');
+});
+
+
 app.use('/api/users', usersRouter);
 app.use('/api/pets', petsRouter);
 app.use('/api/adoptions', adoptionsRouter);
